@@ -14,3 +14,4 @@ api = Api(app)
 
 
 api.add_resource(HelloWorld, '/')
+api.add_resource(SortTable, '/tab')
