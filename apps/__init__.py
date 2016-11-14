@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from flask import Flask
 from flask_restful import Api
-from apps.views.main import *
+from apps.views.views import *
 
 
 # Flask configuration

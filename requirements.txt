@@ -55,6 +55,7 @@ qtconsole==4.2.1
 QtPy==1.1.2
 requests==2.11.1
 rope-py3k==0.9.4.post1
+scikit-learn==0.18
 scipy==0.18.1
 simplegeneric==0.8.1
 six==1.10.0
