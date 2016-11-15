@@ -1,0 +1,22 @@
+{
+  "name": "imba",
+  "version": "1.0.0",
+  "description": "============= imba API ============",
+  "main": "index.js",
+  "directories": {
+    "doc": "doc"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org/fgazquez/imba.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/fgazquez/imba#readme",
+  "devDependencies": {
+    "bower": "^1.8.0"
+  }
+}
