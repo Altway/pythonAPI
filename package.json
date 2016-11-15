@@ -1,7 +1,7 @@
 {
   "name": "imba",
   "version": "1.0.0",
-  "description": "============= imba API ============",
+  "description": "API en bois",
   "main": "index.js",
   "directories": {
     "doc": "doc"
@@ -17,6 +17,12 @@
   "license": "ISC",
   "homepage": "https://bitbucket.org/fgazquez/imba#readme",
   "devDependencies": {
-    "bower": "^1.8.0"
+    "bower": "^1.8.0",
+    "gulp": "^3.9.1",
+    "del": "^2.2.0",
+    "gulp": "^3.9.1",
+    "gulp-browser": "^2.1.4",
+    "gulp-size": "^2.1.0",
+    "reactify": "^1.1.1"
   }
 }
