@@ -13,7 +13,8 @@ class SortTable(Resource):
 
         req = request.get_json()
         data = req.get('data', None)
-        coeff = ana.analyseTab(data)
+        #coeff = ana.linearAnalyseTab(data)
+        coeff = ana.polynomialAnalyseTab(data)
 
         if type(data) == list and data:
             resp = sorted(data)
