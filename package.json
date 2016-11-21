@@ -18,7 +18,6 @@
   "homepage": "https://bitbucket.org/fgazquez/imba#readme",
   "devDependencies": {
     "bower": "^1.8.0",
-    "gulp": "^3.9.1",
     "del": "^2.2.0",
     "gulp": "^3.9.1",
     "gulp-browser": "^2.1.4",

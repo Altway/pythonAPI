@@ -26,20 +26,19 @@ var DynamicSearch = React.createClass({displayName: "DynamicSearch",
     }
 
     return (
-      React.createElement("div", null,
-        React.createElement("input", {type: "text", value: this.state.searchString, onChange: this.handleChange, placeholder: "Search!"}),
-        React.createElement("ul", null,
-           countries.map(function(country){ return React.createElement("li", null, country.name, " ") })
+      React.createElement("div", null, 
+        React.createElement("input", {type: "text", value: this.state.searchString, onChange: this.handleChange, placeholder: "Search!"}), 
+        React.createElement("ul", null, 
+             countries.map(function(country){ return React.createElement("li", null, country.name, " "); }) 
         )
       )
     )
   }
 
 });
-
 // list of countries, defined with JavaScript object literals
 var countries = [
-  {"name": "Sweden"}, {"name": "China"}, {"name": "Peru"}, {"name": "Czech Republic"},
+  {"name": "Sn"}, {"name": "China"}, {"name": "Peru"}, {"name": "Czech Republic"},
   {"name": "Bolivia"}, {"name": "Latvia"}, {"name": "Samoa"}, {"name": "Armenia"},
   {"name": "Greenland"}, {"name": "Cuba"}, {"name": "Western Sahara"}, {"name": "Ethiopia"},
   {"name": "Malaysia"}, {"name": "Argentina"}, {"name": "Uganda"}, {"name": "Chile"},
