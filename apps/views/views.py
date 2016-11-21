@@ -11,11 +11,14 @@ class HelloWorld(Resource):
 class SortTable(Resource):
     def post(self):
 
-        req = request.get_json()
-        data = req.get('data', None)
-        #coeff = ana.linearAnalyseTab(data)
+        #req = request.get_json()
+        #data = req.get('data', None)
+        data = ana.randomData(100)
+        #data.sort()
+        coeff = ana.linearAnalyseTab(data)
         coeff = ana.polynomialAnalyseTab(data)
-
+        #print(data)
+        coeff = ana.treeanalyseTab(data)
         if type(data) == list and data:
             resp = sorted(data)
 

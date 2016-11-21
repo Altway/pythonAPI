@@ -4,9 +4,13 @@ from sklearn import linear_model
 from sklearn.linear_model import Ridge
 from sklearn.preprocessing import PolynomialFeatures
 from sklearn.pipeline import make_pipeline
-
+from sklearn.tree import DecisionTreeRegressor
 import numpy as np
 import matplotlib.pyplot as plt
+
+
+def randomData(size):
+    return np.random.choice(1000, size)
 
 
 def linearAnalyseTab(tab):
@@ -26,7 +30,7 @@ def linearAnalyseTab(tab):
     plt.plot(ntab, color='blue', linewidth=1)
     plt.plot(x, reg.coef_*x + reg.intercept_, color='red', linewidth=1)
 
-    plt.axis([0, 8, -50, 150])
+    plt.axis([-2, len(tab)+5, -2, 1100])
     plt.xlabel('Index')
     plt.ylabel('Value')
     plt.title('Tab distribution')
@@ -55,7 +59,7 @@ def polynomialAnalyseTab(tab):
 
     color = ['blue', 'red', 'green']
     # for each of those degrees, try to interpolate
-    for count, degree in enumerate([5,6,7]):
+    for count, degree in enumerate([10,11,12]):
         # Create the polynomial regression
          model = make_pipeline(PolynomialFeatures(degree), Ridge())
 
@@ -74,3 +78,36 @@ def polynomialAnalyseTab(tab):
 
     return 0
 
+def treeanalyseTab(tab):
+    # numpy.array compliant from Python.list into numpy.Array
+    ntab = np.array(tab)
+
+    # abs_axis simulated
+    abs_axis = np.linspace(0, len(tab)-1, len(tab))
+    abs_smooth = np.linspace(0, len(tab)-1, len(tab)*100)
+    # plot the list point in a graph to compare with the regression
+    #plt.scatter(abs_axis, ntab, color='black')
+
+    # Data formating
+    y = ntab[:, np.newaxis]
+    X = abs_axis[:, np.newaxis]
+    X_smooth = abs_smooth[:, np.newaxis]
+
+    tree_depth = 13
+    clf = DecisionTreeRegressor(max_depth=tree_depth)
+    clf.fit(X,y)
+    y_plot = clf.predict(X_smooth)
+
+    # Plot the results
+    plt.figure()
+    plt.scatter(X, y, c="darkorange", label="data")
+    plt.plot(X_smooth, y_plot, color="cornflowerblue", label="max_depth={}".format(tree_depth), linewidth=1)
+    #plt.plot(X, y, color="yellowgreen", label="max_depth={}".format(tree_depth), linewidth=1)
+    plt.xlabel("data")
+    plt.ylabel("target")
+    plt.title("Decision Tree Regression")
+    plt.legend()
+
+    plt.show()
+
+    return 0
