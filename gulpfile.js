@@ -4,7 +4,7 @@ var gulp = require('gulp');
 
 // tasks
 gulp.task('default', ['del'], function() {
-  gulp.start('transform');
-  gulp.watch('./apps/static/scripts/jsx/*.js', ['transform']);
+  gulp.start('compile');
+  gulp.watch('./apps/static/scripts/jsx/*.js', ['compile']);
 });
 

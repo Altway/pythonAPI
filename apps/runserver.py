@@ -28,5 +28,8 @@ def sortTable():
 
     return "{'error': 'Data sent is not List type or void'}"
 
+@app.route('/game', methods=['GET'])
+def ticTacToe():
+    return render_template('base.html')
 
 app.run(host='0.0.0.0')
